@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>PRUEBA</title>
+		<link href="js/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap/js/ui-bootstrap-tpls-0.14.2.min.js"></script>
+		<script type="text/javascript" src="controlador/index.js"></script>
+		<script type="text/javascript" src="controlador/index_reglas.js"></script>
+	</head>
+	<body ng-app="sh">
+		<div ng-controller="index">
+			<h1>Sistema de Horarios <small>v1.0</small></h1>
+			  <uib-tabset>
+				<uib-tab ng-repeat="tab in tabs" active="tab.activo">
+					<uib-tab-heading> 
+						<i class="glyphicon" class="glyphicon glyphicon-print"></i>&nbsp;{{tab.titulo}}
+					</uib-tab-heading>
+					<div ng-include="tab.url"></div>
+				</uib-tab>
+			  </uib-tabset>
+		</div>
+	</body>
+</html>
